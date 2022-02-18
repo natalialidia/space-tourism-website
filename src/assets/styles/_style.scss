@@ -1,0 +1,38 @@
+@import "variables";
+@import "grid";
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap');
+
+html, body, body #app {
+    margin:0;
+    padding:0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    color: $light-blue;    
+}
+
+@each $name, $style in $headings-styles {
+    #{$name} {
+        font: $style;
+        color: $white;
+        margin: 24px 0;
+    }
+}
+
+.text-white { color: $white; }
+.text-blue { color: $light-blue}
+h5 { letter-spacing: 4.75px; }
+
+.subheading-1 { 
+    font: $subheading-1;
+}
+
+.subheading-2 { 
+    font: $subheading-2;
+    letter-spacing: 2.35px;
+}
