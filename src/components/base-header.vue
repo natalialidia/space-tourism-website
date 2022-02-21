@@ -33,11 +33,13 @@
             <img src="@/assets/img/shared/logo.svg" alt="Logo" class="logo">
         </router-link>
 
+        <hr>
+
         <nav>
 
             <ul>
                 <li v-for="link, index in links" :key="index" > 
-                    <router-link :to="link.route" > {{ link.name }} </router-link>
+                    <router-link :to="link.route" > <span class="marker"> {{ "0" + (index+1) }} </span> {{ link.name }} </router-link>
                 </li>
             </ul>
 
@@ -55,6 +57,18 @@
         padding-left: 50px;
         display: flex;
         align-items: center;
+
+        hr {
+            display: none;
+            background-color: #FFFFFF;
+            opacity: 0.25;
+
+            @media (min-width: 768px) {
+                display: block;
+                width: 40%;
+                margin-right: -5%;
+            }
+        }
 
         nav {
             position: relative;
@@ -81,6 +95,11 @@
                     a {
                         text-decoration: none;
                         color: $white;
+                        letter-spacing: 2.7px;
+                        .marker {
+                            font-weight: bold;
+                            margin-right: .5rem;
+                        }
                     }
                 }
             }
